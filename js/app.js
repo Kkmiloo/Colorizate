@@ -1,6 +1,9 @@
 const mainDiv = document.getElementsByTagName("main")[0];
 const colorDiv = document.getElementsByClassName("colorDiv");
 
+
+// Funciones
+
 function colorRandom() {
   let max = 255;
   let rgb;
@@ -15,14 +18,17 @@ function colorRandom() {
   return rgb;
 }
 
+
 function ColorToHex(color) {
   var hexadecimal = color.toString(16);
   return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
 }
 
+
 function ConvertRGBtoHex(red, green, blue) {
   return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
 }
+
 
 function cambiarColorSection(sectionDiv) {
   let pRGB = sectionDiv.children[0];
@@ -42,11 +48,15 @@ function cambiarColorSection(sectionDiv) {
   }
 }
 
+
 function reinicioColores() {
   for (let i = 0; i < colorDiv.length; i++) {
     cambiarColorSection(colorDiv[i]);
   }
 }
+
+
+//Events listeners
 
 function eventListeners() {
   document.addEventListener("DOMContentLoaded", () => {
